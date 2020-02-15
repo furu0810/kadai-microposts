@@ -15,7 +15,8 @@ class User < ApplicationRecord
     
     #自分がお気に入り追加しているmicropostとの関係
     has_many :favorites
-    has_many :microposts, through: :favorites, source: :micropost
+    #上記のhas_many :micropostsと名前が被るので、favorite_micropostsに変更
+    has_many :favorite_microposts, through: :favorites, source: :micropost 
     
     
     def follow(other_user)
