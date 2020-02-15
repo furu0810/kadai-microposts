@@ -13,6 +13,11 @@ class User < ApplicationRecord
     has_many :reverses_of_relationship, class_name: "Relationship", foreign_key: "follow_id"
     has_many :followers, through: :reverses_of_relationship, source: :user #この行
     
+    #自分がお気に入り追加しているmicropostとの関係
+    has_many :favorites
+    has_many :microposts, through: :favorites, source: :micropost
+    
+    
     def follow(other_user)
       unless self == other_user
         self.relationships.find_or_create_by(follow_id: other_user.id)
