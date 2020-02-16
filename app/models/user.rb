@@ -50,7 +50,7 @@ class User < ApplicationRecord
     end
   
     def favorite?(other_micropost)
-      self.favorites.include?(other_micropost)
+      self.favorite_microposts.include?(other_micropost)
     end
     
     #自分がお気に入り追加したマイクロポストの取得
