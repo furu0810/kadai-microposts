@@ -53,6 +53,4 @@ class User < ApplicationRecord
       self.favorite_microposts.include?(other_micropost)
     end
     
-    
-    
 end
