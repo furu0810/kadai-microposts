@@ -53,8 +53,6 @@ class User < ApplicationRecord
       self.favorite_microposts.include?(other_micropost)
     end
     
-    #自分がお気に入り追加したマイクロポストの取得
-    def like_microposts
-      Micropost.where(user_id: self.favorite_ids + [self.id])
-    end
+    
+    
 end
